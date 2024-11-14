@@ -29,7 +29,7 @@
 ### D2 — Показать информацию по конкретному окну
 
 ### D3 — Добавить новую услугу
-
+```C#
 if (key.Key == ConsoleKey.D3) 
 {
     var addUserName = ChooseService() ?? "empty";
@@ -39,9 +39,9 @@ if (key.Key == ConsoleKey.D3)
     var addResult = await userApi.AddAsync(addUser);
     Console.WriteLine(addResult ? "Ok" : "Error");
 }
-
+```
 ### D4 — Обновление статуса услуги
-
+```c#
 if (key.Key == ConsoleKey.D4) 
 {
     Console.Write("Введите номер окна для обновления статуса: ");
@@ -54,11 +54,11 @@ if (key.Key == ConsoleKey.D4)
         Console.WriteLine(updateResult ? "Статус окна обновлен" : "Ошибка при обновлении статуса окна");
     }
 }
-
+```
 
 ### D5 — Удаление услуги из очереди
 
-
+```c#
 if (key.Key == ConsoleKey.D5) 
 {
     Console.Write("Введите окно для удаления: ");
