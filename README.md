@@ -8,8 +8,6 @@
 1. **Серверная часть**: управляет обработкой запросов от клиентов и взаимодействует с базой данных очереди услуг.
 2. **Клиентская часть**: предоставляет интерфейс для пользователя, позволяя выполнять запросы к серверу.
 
----
-
 ## Функциональные возможности
 
 ### Управление услугами через TCP
@@ -28,9 +26,9 @@
 
 ### 2. Запуск клиента
 
-### Примеры использования
+### D2 — Показать информацию по конкретному окну
 
-### Добавление услуги
+### D3 — Добавить новую услугу
 
 if (key.Key == ConsoleKey.D3) 
 {
@@ -41,9 +39,8 @@ if (key.Key == ConsoleKey.D3)
     var addResult = await userApi.AddAsync(addUser);
     Console.WriteLine(addResult ? "Ok" : "Error");
 }
-```
 
-### Изменение статуса
+### D4 — Обновление статуса услуги
 
 if (key.Key == ConsoleKey.D4) 
 {
@@ -57,5 +54,20 @@ if (key.Key == ConsoleKey.D4)
         Console.WriteLine(updateResult ? "Статус окна обновлен" : "Ошибка при обновлении статуса окна");
     }
 }
+
+
+### D5 — Удаление услуги из очереди
+
+
+if (key.Key == ConsoleKey.D5) 
+{
+    Console.Write("Введите окно для удаления: ");
+    var deleteIdString = Console.ReadLine();
+    int.TryParse(deleteIdString, out var deleteId);
+    var deleteResult = await userApi.DeleteAsync(deleteId);
+    Console.WriteLine(deleteResult ? "Окно удалено" : "Ошибка при удалении окна");
+}
 ```
+
+
 
